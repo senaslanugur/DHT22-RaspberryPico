@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 93, "left": 2.8, "attrs": {} },
+    { "type": "wokwi-pi-pico", "id": "pico", "top": -3.33, "left": -157.33, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -143.7, "left": 52.2, "attrs": {} },
+    { "type": "wokwi-resistor", "id": "r1", "top": 3.95, "left": 0, "attrs": { "value": "1000" } }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "pico:GND.5", "bb1:tn.1", "black", [ "h0" ] ],
+    [ "dht1:GND", "bb1:tn.6", "black", [ "v0" ] ],
+    [ "pico:3V3", "bb1:tp.1", "green", [ "h0" ] ],
+    [ "r1:1", "bb1:tp.2", "red", [ "v0" ] ],
+    [ "dht1:VCC", "bb1:tp.4", "red", [ "v0" ] ],
+    [ "r1:2", "bb1:6t.a", "green", [ "v0" ] ],
+    [ "pico:GP22", "bb1:6t.b", "green", [ "h0" ] ],
+    [ "dht1:SDA", "bb1:6t.e", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
